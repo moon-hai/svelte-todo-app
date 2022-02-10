@@ -1,15 +1,8 @@
 <svelte:options immutable />
 
-<script lang="ts" context="module">
-  export interface ITodoItem {
-    id: string;
-    title: string;
-    completed: boolean;
-  }
-</script>
-
 <script lang="ts">
   import { createEventDispatcher } from 'svelte'
+  import type { ITodoItem } from './types'
 
   export let item: ITodoItem
 
@@ -32,7 +25,6 @@
   <p>{item.completed}</p>
 
   <button on:click={toggleComplete}>{completeText}</button>
-
   <button on:click={removeItem}>remove</button>
 </div>
 
